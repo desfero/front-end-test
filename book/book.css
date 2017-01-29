@@ -1,0 +1,123 @@
+#CharactersList {
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    width: 300px;
+}
+
+#CharactersList .item {
+    display: block;
+    font-family: "Calibri Light", serif;
+    overflow: hidden;
+    padding: 0 15px;
+}
+
+#CharactersList .item:hover {
+    background: #eeeeee;
+    cursor: pointer;
+}
+
+#CharactersList .item:active,
+#CharactersList .item-selected {
+    background: #e6e6e6;
+}
+
+#SingleCharacter {
+    bottom: 0;
+    left: 300px;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#SingleCharacter .details, #SingleCharacter .editor {
+    padding: 20px;
+}
+
+#SingleCharacter img {
+    float: left;
+    padding-right: 15px;
+}
+
+#SingleCharacter .name, #SingleCharacter [name="name"],
+#SingleCharacter .species, #SingleCharacter [name="species"],
+#SingleCharacter .description, #SingleCharacter [name="description"]  {
+    display: block;
+    font-family: "Calibri Light", serif;
+}
+
+#SingleCharacter .name, #SingleCharacter [name="name"] {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 1em 0 0.5em;
+}
+
+#SingleCharacter .species, #SingleCharacter [name="species"] {
+    font-size: 16px;
+    margin: 0.5em 0;
+}
+
+#SingleCharacter [name="description"], #SingleCharacter .description {
+    clear: both;
+    font-size: 14px;
+    margin: 2.5em 0 1em;
+}
+
+#SingleCharacter [name="description"] {
+    height: 100px;
+    width: 100%;
+}
+
+#SingleCharacter button + button {
+    margin-left: 10px;
+}
+
+#SingleCharacter button {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+    background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    background-color:#ffffff;
+    border:1px solid #dcdcdc;
+    border-radius:6px;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    color:#666666;
+    cursor:pointer;
+    display:inline-block;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+}
+
+#SingleCharacter button:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+    background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    background-color:#f6f6f6;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+}
+
+#SingleCharacter button:active {
+    position:relative;
+    top:1px;
+}
+
+
+
+

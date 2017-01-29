@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Character Book</title>
+  <style>
+    body {
+      background-color: #eee;
+    }
+    #test-results {
+      font: normal 12px sans-serif;
+      color: #666;
+    }
+    #test-results.test-pass {
+      color: green;
+    }
+    #test-results.test-fail {
+      color: red;
+    }
+    #test-frame {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 800px;
+      height: 400px;
+      margin-top: -200px;
+      margin-left: -400px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+      background: #fff;
+    }
+  </style>
+
+  <!-- 3rd party vendor libraries -->
+  <link rel="stylesheet" href="vendor/font-awesome-4.6.3/css/font-awesome.min.css">
+  <script src="vendor/jquery-3.1.0.min.js"></script>
+  <script src="vendor/underscore-1.8.3.min.js"></script>
+
+  <!-- 1st party internal libraries -->
+  <script src="store/store.js"></script>
+  <script src="tests/start-test.js"></script>
+  <script src="tests/test-book.js"></script>
+
+  <!-- The source of the 'Book' widget -->
+  <link href="book/book.css" rel="stylesheet">
+  <script src="book/book.js"></script>
+
+  <script>
+    $(function() {
+      var frame = $('#test-frame');
+      var run = $('#test-run');
+      var results = $('#test-results');
+      var store = Store.create();
+
+      run.click(function() {
+        run.prop('disabled', true).text('Running Tests');
+        results.removeClass('test-pass test-fail').text('');
+
+        testBook(frame).then(
+          function success() {
+            run.prop('disabled', false).text('Run Tests');
+            results.addClass('test-pass').text('All tests passed');
+          },
+          function failure(err) {
+            run.prop('disabled', false).text('Run Tests');
+            results.addClass('test-fail').text('Test failed, see console');
+          }
+        );
+      });
+
+      Book.init(frame, store);
+    });
+  </script>
+</head>
+<body>
+  <button id="test-run">Run Tests</button>
+  <span id="test-results"></span>
+  <div id="test-frame">
+  </div>
+</body>
+</html>
